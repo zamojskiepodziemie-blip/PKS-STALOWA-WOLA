@@ -15,9 +15,9 @@ export function CityTicker() {
       <div className="flex animate-marquee whitespace-nowrap py-3.5">
         {items.map((c, i) => (
           <span key={i} className="inline-flex items-center gap-2 mx-6 text-sm font-semibold uppercase tracking-wider">
-            <MapPin className="w-3.5 h-3.5 text-amber-300" />
+            <MapPin className="w-3.5 h-3.5 text-sun-300" />
             {c}
-            <span className="ml-6 text-amber-300/60">●</span>
+            <span className="ml-6 text-sun-300/60">●</span>
           </span>
         ))}
       </div>

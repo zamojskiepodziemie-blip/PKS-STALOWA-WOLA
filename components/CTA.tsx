@@ -18,9 +18,9 @@ export function CTA({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           className="relative rounded-[2.5rem] overflow-hidden bg-ink-900 dark:bg-ink-900 p-10 md:p-16 lg:p-20"
         >
           {/* Background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-brand-600 via-brand-700 to-ink-900" />
+          <div className="absolute inset-0 bg-gradient-to-br from-brand-600 via-sky-700 to-ink-900" />
           <div className="absolute inset-0 bg-grid-dark bg-[size:48px_48px] opacity-20" />
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-amber-400/20 blur-3xl -translate-y-1/2 translate-x-1/3" />
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-sun-400/25 blur-3xl -translate-y-1/2 translate-x-1/3" />
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-brand-400/30 blur-3xl translate-y-1/2 -translate-x-1/3" />
 
           <div className="relative max-w-3xl">

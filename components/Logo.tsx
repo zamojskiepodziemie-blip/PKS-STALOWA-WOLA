@@ -14,8 +14,8 @@ export function Logo({ className, variant = 'full', invert = false }: Props) {
       <svg viewBox="0 0 64 64" className={className} aria-hidden="true">
         <defs>
           <linearGradient id="pks-grad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stopColor="#ef4444" />
-            <stop offset="1" stopColor="#b91c1c" />
+            <stop offset="0" stopColor="#22c55e" />
+            <stop offset="1" stopColor="#15803d" />
           </linearGradient>
         </defs>
         <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#pks-grad)" />
@@ -42,11 +42,11 @@ export function Logo({ className, variant = 'full', invert = false }: Props) {
       <svg viewBox="0 0 64 64" className="w-11 h-11 md:w-12 md:h-12 flex-shrink-0" aria-hidden="true">
         <defs>
           <linearGradient id="pks-grad-h" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stopColor="#ef4444" />
-            <stop offset="1" stopColor="#b91c1c" />
+            <stop offset="0" stopColor="#22c55e" />
+            <stop offset="1" stopColor="#15803d" />
           </linearGradient>
           <filter id="pks-shadow" x="-50%" y="-50%" width="200%" height="200%">
-            <feDropShadow dx="0" dy="3" stdDeviation="3" floodColor="#dc2626" floodOpacity="0.35" />
+            <feDropShadow dx="0" dy="3" stdDeviation="3" floodColor="#16a34a" floodOpacity="0.35" />
           </filter>
         </defs>
         <g filter="url(#pks-shadow)">

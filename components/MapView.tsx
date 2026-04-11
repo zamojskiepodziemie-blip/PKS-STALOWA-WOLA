@@ -108,13 +108,13 @@ export function MapView({ markers, center, zoom = 12, className }: Props) {
         .pks-marker-pin {
           position: absolute;
           inset: 0;
-          background: #dc2626;
+          background: #16a34a;
           border-radius: 50% 50% 50% 0;
           transform: rotate(-45deg);
           display: grid;
           place-items: center;
           color: white;
-          box-shadow: 0 6px 16px -4px rgba(220, 38, 38, 0.6), 0 0 0 3px white;
+          box-shadow: 0 6px 16px -4px rgba(22, 163, 74, 0.6), 0 0 0 3px white;
           transition: transform 0.2s;
         }
         .pks-marker-pin svg {
@@ -129,7 +129,7 @@ export function MapView({ markers, center, zoom = 12, className }: Props) {
           bottom: -4px;
           width: 12px;
           height: 4px;
-          background: rgba(220, 38, 38, 0.3);
+          background: rgba(22, 163, 74, 0.3);
           border-radius: 50%;
           transform: translateX(-50%);
           animation: pks-pulse 2s ease-out infinite;

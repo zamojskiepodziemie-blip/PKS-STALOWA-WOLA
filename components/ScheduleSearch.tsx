@@ -110,7 +110,7 @@ function ConnectionCard({ c, dict }: { c: Connection; dict: Dictionary }) {
               <div className="absolute -top-1 left-0 w-2 h-2 rounded-full bg-brand-600" />
               <div className="absolute -top-1 right-0 w-2 h-2 rounded-full bg-brand-600" />
               {c.transfers > 0 && (
-                <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-amber-500 ring-2 ring-white dark:ring-ink-900" />
+                <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-sun-400 ring-2 ring-white dark:ring-ink-900" />
               )}
             </div>
             <div className="text-center text-[10px] text-ink-500 mt-1.5 uppercase tracking-wider">

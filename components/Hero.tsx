@@ -18,9 +18,11 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
       <div className="absolute inset-0 bg-grid-light dark:bg-grid-dark bg-[size:64px_64px] mask-fade-b opacity-40 -z-10" />
       <div className="absolute inset-0 bg-radial-fade -z-10" />
       <div className="absolute top-20 -right-32 w-[500px] h-[500px] rounded-full bg-brand-500/15 blur-3xl -z-10" />
-      <div className="absolute top-40 -left-32 w-[400px] h-[400px] rounded-full bg-amber-500/10 blur-3xl -z-10" />
-      {/* Diagonal red accent */}
-      <div className="absolute top-0 right-0 w-1/3 h-2 bg-brand-600 -z-10" />
+      <div className="absolute top-40 -left-32 w-[400px] h-[400px] rounded-full bg-sun-400/15 blur-3xl -z-10" />
+      {/* Top accent stripes */}
+      <div className="absolute top-0 right-0 w-1/4 h-2 bg-brand-600 -z-10" />
+      <div className="absolute top-0 right-1/4 w-[8%] h-2 bg-sun-400 -z-10" />
+      <div className="absolute top-0 right-[33%] w-[6%] h-2 bg-sky-600 -z-10" />
 
       <div className="container">
         <div className="grid lg:grid-cols-[1.1fr_1fr] gap-10 items-center">
@@ -36,42 +38,81 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
                 <ShieldCheck className="w-3 h-3" />
                 {dict.hero.eyebrow}
               </span>
-              <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-amber-400 border border-amber-200 dark:border-amber-900">
+              <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-sun-50 dark:bg-sun-950/40 text-sun-700 dark:text-sun-400 border border-sun-200 dark:border-sun-900">
                 <Star className="w-3 h-3 fill-current" />
                 4.8/5 · 2400+ opinii
               </span>
             </motion.div>
 
-            <div className="flex items-start gap-5">
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              className="h-display text-4xl sm:text-5xl lg:text-6xl leading-[1] whitespace-pre-line"
+            >
+              {dict.hero.title}
+            </motion.h1>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30, scale: 0.96 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+              className="mt-7 relative max-w-xl"
+            >
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-ink-900/20 ring-1 ring-ink-200/60 dark:ring-ink-800">
+                <div className="relative aspect-[16/9]">
+                  <Image
+                    src="/autobus-2.jpg"
+                    alt="Autobusy PKS Stalowa Wola"
+                    fill
+                    sizes="(min-width: 1024px) 600px, 100vw"
+                    className="object-cover"
+                    priority
+                  />
+                  {/* Subtle bottom gradient just for caption legibility */}
+                  <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
+                  {/* Tag */}
+                  <div className="absolute top-4 left-4 flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/90 dark:bg-ink-900/90 backdrop-blur-md shadow-lg">
+                    <span className="relative flex w-2 h-2">
+                      <span className="absolute inset-0 rounded-full bg-brand-500 animate-ping opacity-75" />
+                      <span className="relative rounded-full w-2 h-2 bg-brand-600" />
+                    </span>
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-ink-900 dark:text-white">
+                      Nasza flota
+                    </span>
+                  </div>
+                  {/* Bottom caption */}
+                  <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
+                    <div className="font-display text-lg font-bold leading-tight drop-shadow-lg">
+                      Nowoczesne autokary PKS
+                    </div>
+                    <div className="text-xs text-white/85 mt-0.5 drop-shadow">
+                      Komfort i bezpieczeństwo na każdej trasie
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Logo on the sky (floats above card) */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
                 animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                transition={{ duration: 0.8, delay: 0.15, type: 'spring', stiffness: 120 }}
-                whileHover={{ scale: 1.05, rotate: 3 }}
-                className="flex-shrink-0 mt-2 hidden sm:block"
+                transition={{ duration: 0.8, delay: 0.5, type: 'spring', stiffness: 140 }}
+                whileHover={{ scale: 1.08, rotate: 4 }}
+                className="absolute -top-10 right-3 md:-top-14 md:right-4 lg:-top-16 z-10"
               >
-                <div className="relative w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48">
-                  <div className="absolute inset-0 rounded-full bg-brand-500/25 blur-2xl scale-110" />
+                <div className="relative w-40 h-40 md:w-52 md:h-52 lg:w-64 lg:h-64">
                   <Image
                     src="/pksstwola-logo.png"
                     alt="Logo PKS Stalowa Wola S.A."
                     fill
-                    sizes="(min-width: 1024px) 192px, (min-width: 768px) 160px, 128px"
-                    className="object-contain drop-shadow-xl relative"
+                    sizes="(min-width: 1024px) 256px, (min-width: 768px) 208px, 160px"
+                    className="object-contain drop-shadow-[0_6px_18px_rgba(0,0,0,0.6)]"
                     priority
                   />
                 </div>
               </motion.div>
-
-              <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.1 }}
-                className="h-display text-5xl sm:text-6xl lg:text-7xl leading-[0.95] whitespace-pre-line"
-              >
-                {dict.hero.title}
-              </motion.h1>
-            </div>
+            </motion.div>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -125,7 +166,7 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.45 }}
-          className="mt-8 lg:-mt-12 max-w-5xl mx-auto relative z-20"
+          className="mt-12 lg:mt-8 max-w-5xl mx-auto relative z-20"
         >
           <SearchWidget locale={locale} dict={dict} />
         </motion.div>
@@ -145,7 +186,7 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
               transition={{ duration: 0.5, delay: 0.7 + i * 0.08 }}
               className="text-center"
             >
-              <div className="font-display text-4xl md:text-5xl font-bold bg-gradient-to-br from-brand-600 to-brand-800 dark:from-brand-400 dark:to-brand-600 bg-clip-text text-transparent">
+              <div className="font-display text-4xl md:text-5xl font-bold bg-gradient-to-br from-brand-600 via-brand-700 to-sky-700 dark:from-brand-400 dark:via-brand-500 dark:to-sky-500 bg-clip-text text-transparent">
                 {s.value}
               </div>
               <div className="mt-1 text-xs md:text-sm text-ink-500 uppercase tracking-wider">{s.label}</div>

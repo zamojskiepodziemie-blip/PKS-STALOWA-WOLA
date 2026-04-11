@@ -47,7 +47,7 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
       <div className="hidden md:block bg-brand-600 text-white text-xs">
         <div className="container flex items-center justify-between h-8">
           <div className="flex items-center gap-5">
-            <a href="tel:+48158425811" className="flex items-center gap-1.5 hover:text-amber-200 transition-colors">
+            <a href="tel:+48158425811" className="flex items-center gap-1.5 hover:text-sun-200 transition-colors">
               <Phone className="w-3 h-3" />
               <span className="font-semibold">+48 15 842 58 11</span>
             </a>
