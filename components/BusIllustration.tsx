@@ -26,6 +26,75 @@ export function BusIllustration({ className }: { className?: string }) {
             priority
           />
 
+          {/* Animated bus routes — buses traveling from Stalowa Wola to each city */}
+          <svg
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+            className="absolute inset-0 w-full h-full pointer-events-none"
+            aria-hidden="true"
+          >
+            <defs>
+              <radialGradient id="bus-glow">
+                <stop offset="0" stopColor="#22c55e" stopOpacity="0.9" />
+                <stop offset="0.5" stopColor="#16a34a" stopOpacity="0.4" />
+                <stop offset="1" stopColor="#16a34a" stopOpacity="0" />
+              </radialGradient>
+            </defs>
+            {[
+              { id: 'wwa', d: 'M 74 70 Q 60 50 58 38', dur: '4s' },
+              { id: 'lub', d: 'M 74 70 Q 80 60 75 53', dur: '2.6s' },
+              { id: 'krk', d: 'M 74 70 Q 64 80 58 78', dur: '3.2s' },
+              { id: 'rze', d: 'M 74 70 Q 78 76 76 78', dur: '1.8s' },
+            ].map((r) => (
+              <g key={r.id}>
+                {/* Subtle route path */}
+                <path
+                  d={r.d}
+                  fill="none"
+                  stroke="#16a34a"
+                  strokeWidth="0.5"
+                  strokeDasharray="0.6 0.8"
+                  strokeLinecap="round"
+                  opacity="0.55"
+                  vectorEffect="non-scaling-stroke"
+                />
+                <path id={`route-${r.id}`} d={r.d} fill="none" stroke="none" />
+
+                {/* Glow halo following the bus */}
+                <circle r="2.6" fill="url(#bus-glow)">
+                  <animateMotion dur={r.dur} repeatCount="indefinite">
+                    <mpath href={`#route-${r.id}`} />
+                  </animateMotion>
+                </circle>
+
+                {/* Bus icon traveling along route */}
+                <g>
+                  <animateMotion dur={r.dur} repeatCount="indefinite">
+                    <mpath href={`#route-${r.id}`} />
+                  </animateMotion>
+                  {/* Bus body */}
+                  <rect x="-2.4" y="-1.25" width="4.8" height="2.5" rx="0.55" fill="#16a34a" stroke="white" strokeWidth="0.25" vectorEffect="non-scaling-stroke" />
+                  {/* Roof highlight */}
+                  <rect x="-2.4" y="-1.25" width="4.8" height="0.4" rx="0.55" fill="rgba(255,255,255,0.3)" />
+                  {/* Windows */}
+                  <rect x="-2" y="-0.85" width="0.85" height="0.95" rx="0.12" fill="#bfdbfe" />
+                  <rect x="-1" y="-0.85" width="0.85" height="0.95" rx="0.12" fill="#bfdbfe" />
+                  <rect x="0" y="-0.85" width="0.85" height="0.95" rx="0.12" fill="#bfdbfe" />
+                  <rect x="1" y="-0.85" width="0.85" height="0.95" rx="0.12" fill="#bfdbfe" />
+                  {/* Yellow stripe */}
+                  <rect x="-2.4" y="0.3" width="4.8" height="0.25" fill="#facc15" />
+                  {/* Wheels */}
+                  <circle cx="-1.5" cy="1.4" r="0.45" fill="#0a0a0a" />
+                  <circle cx="1.5" cy="1.4" r="0.45" fill="#0a0a0a" />
+                  <circle cx="-1.5" cy="1.4" r="0.2" fill="#525252" />
+                  <circle cx="1.5" cy="1.4" r="0.2" fill="#525252" />
+                  {/* Headlight */}
+                  <circle cx="-2.25" cy="-0.2" r="0.18" fill="#fef3c7" />
+                </g>
+              </g>
+            ))}
+          </svg>
+
           {/* Connected city pins */}
           {[
             { name: 'Warszawa', left: '58%', top: '38%', delay: 1.5 },
