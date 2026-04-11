@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 255 255 255;
+    --foreground: 15 23 42;
+  }
+  .dark {
+    --background: 2 6 23;
+    --foreground: 248 250 252;
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-white text-ink-900 dark:bg-ink-950 dark:text-ink-50;
+    font-feature-settings: "cv11", "ss01", "ss03";
+  }
+  ::selection {
+    @apply bg-brand-600 text-white;
+  }
+  *:focus-visible {
+    @apply outline-none ring-2 ring-brand-500 ring-offset-2 ring-offset-white dark:ring-offset-ink-950 rounded-sm;
+  }
+  /* Smooth scrollbar */
+  ::-webkit-scrollbar { width: 12px; height: 12px; }
+  ::-webkit-scrollbar-track { @apply bg-ink-100 dark:bg-ink-900; }
+  ::-webkit-scrollbar-thumb { @apply bg-ink-300 dark:bg-ink-700 rounded-full border-2 border-ink-100 dark:border-ink-900; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-brand-600; }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 font-medium rounded-full px-6 py-3 transition-all duration-200 disabled:opacity-50 disabled:pointer-events-none whitespace-nowrap;
+  }
+  .btn-primary {
+    @apply btn bg-brand-600 text-white hover:bg-brand-700 shadow-lg shadow-brand-600/25 hover:shadow-xl hover:shadow-brand-600/30 hover:-translate-y-0.5 active:translate-y-0;
+  }
+  .btn-ghost {
+    @apply btn bg-ink-100 dark:bg-ink-800 text-ink-900 dark:text-ink-50 hover:bg-ink-200 dark:hover:bg-ink-700;
+  }
+  .btn-outline {
+    @apply btn border border-ink-300 dark:border-ink-700 text-ink-900 dark:text-ink-50 hover:bg-ink-50 dark:hover:bg-ink-900;
+  }
+  .card {
+    @apply rounded-3xl bg-white dark:bg-ink-900 border border-ink-200 dark:border-ink-800 shadow-sm;
+  }
+  .glass {
+    @apply backdrop-blur-xl bg-white/70 dark:bg-ink-950/70 border border-white/20 dark:border-white/10;
+  }
+  .section {
+    @apply py-20 md:py-28;
+  }
+  .eyebrow {
+    @apply inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-brand-50 dark:bg-brand-950/50 text-brand-700 dark:text-brand-400 border border-brand-200 dark:border-brand-900;
+  }
+  .h-display {
+    @apply font-display font-bold tracking-tight text-balance;
+  }
+  .input {
+    @apply w-full bg-transparent border-0 focus:ring-0 text-ink-900 dark:text-ink-50 placeholder:text-ink-400 dark:placeholder:text-ink-500 text-sm;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+  .mask-fade-r { mask-image: linear-gradient(to right, black 80%, transparent); }
+  .mask-fade-b { mask-image: linear-gradient(to bottom, black 70%, transparent); }
+}
