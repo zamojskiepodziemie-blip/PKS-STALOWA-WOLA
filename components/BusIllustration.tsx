@@ -26,12 +26,39 @@ export function BusIllustration({ className }: { className?: string }) {
             priority
           />
 
-          {/* Pin marking Stalowa Wola */}
+          {/* Connected city pins */}
+          {[
+            { name: 'Warszawa', left: '58%', top: '38%', delay: 1.5 },
+            { name: 'Lublin', left: '75%', top: '53%', delay: 1.65 },
+            { name: 'Kraków', left: '58%', top: '78%', delay: 1.8 },
+            { name: 'Rzeszów', left: '76%', top: '78%', delay: 1.95 },
+          ].map((city) => (
+            <motion.div
+              key={city.name}
+              initial={{ opacity: 0, y: -6, scale: 0 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.4, delay: city.delay, type: 'spring', stiffness: 240 }}
+              className="absolute"
+              style={{ left: city.left, top: city.top }}
+            >
+              <div className="relative -translate-x-1/2 -translate-y-full flex flex-col items-center">
+                <div className="relative w-3 h-3">
+                  <div className="absolute inset-0 rounded-full bg-sky-600 ring-2 ring-white shadow-md" />
+                  <div className="absolute inset-0 rounded-full bg-sky-500 animate-ping opacity-50" />
+                </div>
+                <span className="mt-1 px-1.5 py-0.5 rounded bg-white/95 dark:bg-ink-900/95 text-[8px] md:text-[9px] font-bold uppercase tracking-wide text-sky-700 dark:text-sky-400 shadow-sm whitespace-nowrap ring-1 ring-sky-200 dark:ring-sky-900">
+                  {city.name}
+                </span>
+              </div>
+            </motion.div>
+          ))}
+
+          {/* Pin marking Stalowa Wola (HQ — larger, brand color) */}
           <motion.div
             initial={{ opacity: 0, y: -8, scale: 0 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.5, delay: 1, type: 'spring', stiffness: 260 }}
-            className="absolute"
+            className="absolute z-10"
             style={{ left: '74%', top: '70%' }}
           >
             <div className="relative -translate-x-1/2 -translate-y-full flex flex-col items-center">
