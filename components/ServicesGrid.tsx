@@ -1,12 +1,22 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, Bus, Truck, Fuel, Wrench, Compass, CircleDot } from 'lucide-react';
 import type { Locale } from '@/lib/i18n';
 import type { Dictionary } from '@/lib/dictionaries';
 
 const icons = [Bus, Truck, Fuel, Wrench, Compass, CircleDot];
+
+const images = [
+  '/svc-transport.jpg',
+  '/svc-charter.jpg',
+  '/svc-fuel.jpg',
+  '/svc-inspection.jpg',
+  '/svc-travel.jpg',
+  '/svc-tires.jpg',
+];
 
 export function ServicesGrid({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   return (
@@ -21,6 +31,7 @@ export function ServicesGrid({ locale, dict }: { locale: Locale; dict: Dictionar
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {dict.services.items.map((item, i) => {
             const Icon = icons[i] ?? Bus;
+            const img = images[i] ?? images[0];
             return (
               <motion.div
                 key={i}
@@ -31,26 +42,45 @@ export function ServicesGrid({ locale, dict }: { locale: Locale; dict: Dictionar
               >
                 <Link
                   href={`/${locale}${item.href}`}
-                  className="group relative block card p-7 h-full overflow-hidden hover:border-brand-300 dark:hover:border-brand-800 hover:shadow-2xl hover:shadow-brand-600/5 transition-all duration-300"
+                  className="group relative block card h-full overflow-hidden hover:border-brand-300 dark:hover:border-brand-800 hover:shadow-2xl hover:shadow-brand-600/10 transition-all duration-300"
                 >
-                  <div className="absolute -top-20 -right-20 w-40 h-40 rounded-full bg-brand-500/0 group-hover:bg-brand-500/10 blur-3xl transition-all duration-500" />
+                  {/* Image banner */}
+                  <div className="relative aspect-[16/10] overflow-hidden bg-ink-200 dark:bg-ink-800">
+                    <Image
+                      src={img}
+                      alt={item.title}
+                      fill
+                      sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                      className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-ink-950/70 via-ink-950/10 to-transparent" />
 
-                  <div className="flex items-start justify-between mb-6">
-                    <div className="w-12 h-12 rounded-2xl bg-brand-50 dark:bg-brand-950/50 border border-brand-200 dark:border-brand-900 grid place-items-center text-brand-600 dark:text-brand-400 group-hover:scale-110 group-hover:rotate-3 transition-transform">
+                    {/* Floating icon badge */}
+                    <div className="absolute bottom-3 left-3 w-12 h-12 rounded-2xl bg-white/95 dark:bg-ink-900/95 backdrop-blur-md grid place-items-center text-brand-600 dark:text-brand-400 shadow-lg ring-1 ring-white/40 group-hover:scale-110 group-hover:rotate-3 transition-transform">
                       <Icon className="w-5 h-5" strokeWidth={2.2} />
                     </div>
-                    <ArrowUpRight className="w-5 h-5 text-ink-400 group-hover:text-brand-600 group-hover:rotate-12 transition-all" />
+
+                    {/* Tag */}
+                    <div className="absolute top-3 left-3">
+                      <span className="px-2.5 py-1 rounded-full text-[10px] uppercase tracking-widest font-bold bg-white/95 dark:bg-ink-900/95 text-brand-700 dark:text-brand-400 backdrop-blur-md shadow-md">
+                        {item.tag}
+                      </span>
+                    </div>
+
+                    <ArrowUpRight className="absolute top-3 right-3 w-5 h-5 text-white drop-shadow-lg group-hover:rotate-12 transition-transform" />
                   </div>
 
-                  <span className="text-[10px] uppercase tracking-widest font-semibold text-brand-600 dark:text-brand-400">
-                    {item.tag}
-                  </span>
-                  <h3 className="mt-1 text-xl font-display font-semibold leading-tight">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 text-sm text-ink-600 dark:text-ink-400 leading-relaxed">
-                    {item.desc}
-                  </p>
+                  {/* Content */}
+                  <div className="p-6">
+                    <h3 className="text-xl font-display font-semibold leading-tight">
+                      {item.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-ink-600 dark:text-ink-400 leading-relaxed">
+                      {item.desc}
+                    </p>
+                  </div>
+
+                  <div className="absolute -bottom-20 -right-20 w-40 h-40 rounded-full bg-brand-500/0 group-hover:bg-brand-500/15 blur-3xl transition-all duration-500" />
                 </Link>
               </motion.div>
             );
