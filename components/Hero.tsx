@@ -57,7 +57,7 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
               initial={{ opacity: 0, y: 30, scale: 0.96 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-              className="mt-7 relative max-w-xl"
+              className="mt-7 relative max-w-[720px]"
             >
               <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-ink-900/20 ring-1 ring-ink-200/60 dark:ring-ink-800">
                 <div className="relative aspect-[16/9]">
@@ -93,21 +93,21 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
                 </div>
               </div>
 
-              {/* Logo on the sky (floats above card) */}
+              {/* Logo on the sky (top center) */}
               <motion.div
-                initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
-                animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                initial={{ opacity: 0, scale: 0.5, y: -20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5, type: 'spring', stiffness: 140 }}
-                whileHover={{ scale: 1.08, rotate: 4 }}
-                className="absolute -top-10 right-3 md:-top-14 md:right-4 lg:-top-16 z-10"
+                whileHover={{ scale: 1.08 }}
+                className="absolute top-[-13%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none"
               >
-                <div className="relative w-40 h-40 md:w-52 md:h-52 lg:w-64 lg:h-64">
+                <div className="relative w-52 h-52 md:w-60 md:h-60 lg:w-72 lg:h-72">
                   <Image
                     src="/pksstwola-logo.png"
                     alt="Logo PKS Stalowa Wola S.A."
                     fill
-                    sizes="(min-width: 1024px) 256px, (min-width: 768px) 208px, 160px"
-                    className="object-contain drop-shadow-[0_6px_18px_rgba(0,0,0,0.6)]"
+                    sizes="(min-width: 1024px) 288px, (min-width: 768px) 240px, 208px"
+                    className="object-contain drop-shadow-[0_8px_24px_rgba(0,0,0,0.7)]"
                     priority
                   />
                 </div>
