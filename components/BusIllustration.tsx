@@ -95,8 +95,8 @@ export function BusIllustration({ className }: { className?: string }) {
             ))}
           </svg>
 
-          {/* Voivodeship names — positioned at geographic centers */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {/* Voivodeship names — positioned at geographic centers (hidden on small screens) */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none hidden md:block">
             {[
               { name: 'dolnośląskie', left: '25%', top: '66%', small: false },
               { name: 'kujawsko-\npomorskie', left: '44%', top: '30%', small: false },
@@ -180,7 +180,7 @@ export function BusIllustration({ className }: { className?: string }) {
         initial={{ opacity: 0, scaleX: 0 }}
         animate={{ opacity: 1, scaleX: 1 }}
         transition={{ duration: 0.7, delay: 1.1, ease: 'easeOut' }}
-        className="relative mx-auto w-[80%] max-w-md h-24 overflow-hidden text-ink-900 dark:text-white"
+        className="relative mx-auto w-[80%] max-w-md h-16 sm:h-24 overflow-hidden text-ink-900 dark:text-white"
       >
         {/* Top dashed edge line */}
         <div

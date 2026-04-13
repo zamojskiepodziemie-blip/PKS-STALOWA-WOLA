@@ -18,7 +18,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
       <div className="container">
         <div className="max-w-3xl mb-16">
           <span className="eyebrow mb-4">{dict.nav.contact}</span>
-          <h1 className="h-display text-5xl md:text-6xl mt-4">{dict.contactPage.title}</h1>
+          <h1 className="h-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-4">{dict.contactPage.title}</h1>
           <p className="mt-4 text-lg text-ink-600 dark:text-ink-400">{dict.contactPage.subtitle}</p>
         </div>
 
@@ -37,7 +37,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
             ))}
           </div>
 
-          <div className="card overflow-hidden min-h-[480px] relative">
+          <div className="card overflow-hidden min-h-[300px] sm:min-h-[400px] lg:min-h-[480px] relative">
             <MapView
               className="absolute inset-0 w-full h-full"
               zoom={14}

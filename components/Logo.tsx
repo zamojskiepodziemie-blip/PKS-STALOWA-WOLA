@@ -69,7 +69,7 @@ export function Logo({ className, variant = 'full', invert = false }: Props) {
       </svg>
       <div className="leading-none">
         <div
-          className="font-display font-extrabold tracking-tight text-xl md:text-2xl"
+          className="font-display font-extrabold tracking-tight text-lg sm:text-xl md:text-2xl"
           style={{ color: text }}
         >
           PKS Stalowa Wola

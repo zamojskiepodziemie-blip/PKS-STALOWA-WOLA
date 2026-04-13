@@ -10,12 +10,12 @@ export default async function FuelPage({ params }: { params: Promise<{ locale: s
     <div className="pt-32">
       <div className="container mb-10">
         <span className="eyebrow mb-4">{dict.nav.fuel}</span>
-        <h1 className="h-display text-5xl md:text-6xl mt-4">{dict.fuelPage.title}</h1>
+        <h1 className="h-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-4">{dict.fuelPage.title}</h1>
         <p className="mt-4 text-lg text-ink-600 dark:text-ink-400 max-w-2xl">{dict.fuelPage.subtitle}</p>
       </div>
 
       <div className="container mb-12">
-        <div className="card overflow-hidden h-[460px] relative">
+        <div className="card overflow-hidden h-[280px] sm:h-[360px] lg:h-[460px] relative">
           <MapView
             className="absolute inset-0 w-full h-full"
             markers={[

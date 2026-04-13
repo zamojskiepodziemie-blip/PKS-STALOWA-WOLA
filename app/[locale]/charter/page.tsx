@@ -12,7 +12,7 @@ export default async function CharterPage({ params }: { params: Promise<{ locale
         <div className="grid lg:grid-cols-[1.2fr_1fr] gap-12 items-start">
           <div>
             <span className="eyebrow mb-4">{dict.nav.charter}</span>
-            <h1 className="h-display text-5xl md:text-6xl mt-4">{dict.charterPage.title}</h1>
+            <h1 className="h-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-4">{dict.charterPage.title}</h1>
             <p className="mt-4 text-lg text-ink-600 dark:text-ink-400">{dict.charterPage.subtitle}</p>
 
             <div className="mt-10 card p-6">

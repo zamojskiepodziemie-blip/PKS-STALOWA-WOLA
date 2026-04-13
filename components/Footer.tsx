@@ -9,9 +9,9 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
 
   return (
     <footer className="relative mt-20 border-t border-ink-200 dark:border-ink-800 bg-ink-50 dark:bg-ink-950">
-      <div className="container py-16 lg:py-20">
-        <div className="grid lg:grid-cols-12 gap-10">
-          <div className="lg:col-span-4">
+      <div className="container py-10 sm:py-16 lg:py-20">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10">
+          <div className="sm:col-span-2 lg:col-span-4">
             <Link href={`/${locale}`} className="inline-block mb-5">
               <Logo />
             </Link>
@@ -47,7 +47,7 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
             </ul>
           </div>
 
-          <div className="lg:col-span-4">
+          <div className="sm:col-span-2 lg:col-span-4">
             <h3 className="text-xs uppercase tracking-wider font-semibold text-ink-500 mb-4">{dict.footer.contact}</h3>
             <ul className="space-y-3 text-sm">
               <li className="flex gap-3"><MapPin className="w-4 h-4 mt-0.5 text-brand-600 flex-shrink-0" /><span>ul. Ofiar Katynia 30<br />37-450 Stalowa Wola</span></li>

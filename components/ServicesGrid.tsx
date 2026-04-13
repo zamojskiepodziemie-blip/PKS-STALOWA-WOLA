@@ -24,7 +24,7 @@ export function ServicesGrid({ locale, dict }: { locale: Locale; dict: Dictionar
       <div className="container">
         <div className="max-w-2xl mb-14">
           <span className="eyebrow mb-4">{dict.services.eyebrow}</span>
-          <h2 className="h-display text-4xl md:text-5xl lg:text-6xl mt-4">{dict.services.title}</h2>
+          <h2 className="h-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-4">{dict.services.title}</h2>
           <p className="mt-4 text-lg text-ink-600 dark:text-ink-400 text-pretty">{dict.services.subtitle}</p>
         </div>
 

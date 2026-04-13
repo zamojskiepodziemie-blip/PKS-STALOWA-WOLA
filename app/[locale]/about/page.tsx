@@ -17,7 +17,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       <div className="container">
         <div className="max-w-3xl mb-16">
           <span className="eyebrow mb-4">{dict.nav.about}</span>
-          <h1 className="h-display text-5xl md:text-6xl mt-4">{dict.aboutPage.title}</h1>
+          <h1 className="h-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-4">{dict.aboutPage.title}</h1>
           <p className="mt-6 text-xl text-ink-600 dark:text-ink-400 leading-relaxed">
             Od ponad 25 lat łączymy mieszkańców Podkarpacia i Lubelszczyzny z resztą Polski. Inwestujemy w nowoczesną flotę, kierowców i komfort pasażerów.
           </p>

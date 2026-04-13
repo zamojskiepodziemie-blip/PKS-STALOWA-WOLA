@@ -18,7 +18,7 @@ export function FuelPrices({ dict }: { dict: Dictionary }) {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
           <div>
             <span className="eyebrow mb-4">{dict.fuel.eyebrow}</span>
-            <h2 className="h-display text-4xl md:text-5xl mt-4">{dict.fuel.title}</h2>
+            <h2 className="h-display text-3xl sm:text-4xl md:text-5xl mt-4">{dict.fuel.title}</h2>
             <p className="mt-3 text-lg text-ink-600 dark:text-ink-400">{dict.fuel.subtitle}</p>
           </div>
           <div className="flex items-center gap-2 text-sm text-ink-500">
@@ -40,7 +40,7 @@ export function FuelPrices({ dict }: { dict: Dictionary }) {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="card p-7"
             >
-              <header className="flex items-start justify-between gap-4 mb-6 pb-6 border-b border-ink-200 dark:border-ink-800">
+              <header className="flex flex-col sm:flex-row items-start justify-between gap-3 sm:gap-4 mb-6 pb-6 border-b border-ink-200 dark:border-ink-800">
                 <div>
                   <h3 className="font-display text-xl font-semibold">{station.name}</h3>
                   <p className="mt-1 flex items-center gap-1.5 text-sm text-ink-500">

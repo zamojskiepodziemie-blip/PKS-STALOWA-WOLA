@@ -13,7 +13,7 @@ import { Logo } from './Logo';
 
 export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   return (
-    <section className="relative pt-32 md:pt-36 overflow-hidden">
+    <section className="relative pt-28 sm:pt-32 md:pt-36 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-grid-light dark:bg-grid-dark bg-[size:64px_64px] mask-fade-b opacity-40 -z-10" />
       <div className="absolute inset-0 bg-radial-fade -z-10" />
@@ -48,7 +48,7 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="h-display text-4xl sm:text-5xl lg:text-6xl leading-[1] whitespace-pre-line"
+              className="h-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.1] whitespace-pre-line"
             >
               {dict.hero.title}
             </motion.h1>
@@ -101,7 +101,7 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
                 whileHover={{ scale: 1.08 }}
                 className="absolute top-[-13%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none"
               >
-                <div className="relative w-52 h-52 md:w-60 md:h-60 lg:w-72 lg:h-72">
+                <div className="relative w-36 h-36 sm:w-52 sm:h-52 md:w-60 md:h-60 lg:w-72 lg:h-72">
                   <Image
                     src="/pksstwola-logo.png"
                     alt="Logo PKS Stalowa Wola S.A."
@@ -118,7 +118,7 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.25 }}
-              className="mt-6 text-lg md:text-xl text-ink-600 dark:text-ink-400 max-w-xl text-pretty"
+              className="mt-5 sm:mt-6 text-base sm:text-lg md:text-xl text-ink-600 dark:text-ink-400 max-w-xl text-pretty"
             >
               {dict.hero.subtitle}
             </motion.p>
@@ -139,7 +139,7 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.35 }}
-              className="mt-8 flex flex-wrap items-center gap-3"
+              className="mt-6 sm:mt-8 flex flex-wrap items-center gap-3"
             >
               <Link href={`/${locale}/schedule`} className="btn-primary group">
                 {dict.hero.cta1}
@@ -152,8 +152,8 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
             </motion.div>
           </div>
 
-          {/* RIGHT — bus illustration */}
-          <div className="relative">
+          {/* RIGHT — bus illustration (hidden on small mobile) */}
+          <div className="relative hidden sm:block">
             <div className="absolute inset-0 -z-10 flex items-center justify-center">
               <Logo variant="mark" className="w-[520px] h-[520px] opacity-[0.04] dark:opacity-[0.08]" />
             </div>
@@ -176,7 +176,7 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.7 }}
-          className="mt-16 md:mt-24 mb-16 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 max-w-4xl mx-auto"
+          className="mt-12 sm:mt-16 md:mt-24 mb-12 sm:mb-16 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-10 max-w-4xl mx-auto"
         >
           {dict.hero.stats.map((s, i) => (
             <motion.div
@@ -186,7 +186,7 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
               transition={{ duration: 0.5, delay: 0.7 + i * 0.08 }}
               className="text-center"
             >
-              <div className="font-display text-4xl md:text-5xl font-bold bg-gradient-to-br from-brand-600 via-brand-700 to-sky-700 dark:from-brand-400 dark:via-brand-500 dark:to-sky-500 bg-clip-text text-transparent">
+              <div className="font-display text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-br from-brand-600 via-brand-700 to-sky-700 dark:from-brand-400 dark:via-brand-500 dark:to-sky-500 bg-clip-text text-transparent">
                 {s.value}
               </div>
               <div className="mt-1 text-xs md:text-sm text-ink-500 uppercase tracking-wider">{s.label}</div>

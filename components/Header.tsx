@@ -59,6 +59,15 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           </div>
         </div>
       </div>
+      {/* Mobile phone bar */}
+      <div className="md:hidden bg-brand-600 text-white text-xs">
+        <div className="container flex items-center justify-center h-7">
+          <a href="tel:+48158425811" className="flex items-center gap-1.5">
+            <Phone className="w-3 h-3" />
+            <span className="font-semibold">+48 15 842 58 11</span>
+          </a>
+        </div>
+      </div>
 
       <div className={cn('container flex items-center justify-between gap-6 transition-all', scrolled ? 'py-2.5' : 'py-4')}>
         <Link href={`/${locale}`} className="group" aria-label="PKS Stalowa Wola — strona główna">

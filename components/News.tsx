@@ -22,7 +22,7 @@ export function News({ locale, dict }: { locale: Locale; dict: Dictionary }) {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
           <div>
             <span className="eyebrow mb-4">{dict.news.eyebrow}</span>
-            <h2 className="h-display text-4xl md:text-5xl mt-4">{dict.news.title}</h2>
+            <h2 className="h-display text-3xl sm:text-4xl md:text-5xl mt-4">{dict.news.title}</h2>
           </div>
         </div>
 

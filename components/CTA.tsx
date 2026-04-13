@@ -15,7 +15,7 @@ export function CTA({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative rounded-[2.5rem] overflow-hidden bg-ink-900 dark:bg-ink-900 p-10 md:p-16 lg:p-20"
+          className="relative rounded-2xl sm:rounded-[2.5rem] overflow-hidden bg-ink-900 dark:bg-ink-900 p-6 sm:p-10 md:p-16 lg:p-20"
         >
           {/* Background */}
           <div className="absolute inset-0 bg-gradient-to-br from-brand-600 via-sky-700 to-ink-900" />
@@ -24,10 +24,10 @@ export function CTA({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-brand-400/30 blur-3xl translate-y-1/2 -translate-x-1/3" />
 
           <div className="relative max-w-3xl">
-            <h2 className="h-display text-4xl md:text-5xl lg:text-6xl text-white">
+            <h2 className="h-display text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-white">
               {dict.cta.title}
             </h2>
-            <p className="mt-5 text-lg md:text-xl text-white/80 max-w-xl text-pretty">
+            <p className="mt-4 sm:mt-5 text-base sm:text-lg md:text-xl text-white/80 max-w-xl text-pretty">
               {dict.cta.subtitle}
             </p>
             <div className="mt-10 flex flex-wrap gap-3">

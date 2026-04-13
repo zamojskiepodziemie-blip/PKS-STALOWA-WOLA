@@ -58,7 +58,7 @@ export function CharterForm({ dict }: { dict: Dictionary }) {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <Input label={dict.charterPage.from} required />
         <Input label={dict.charterPage.destination} required />
         <Input label={dict.charterPage.departureDate} type="date" required />
@@ -66,7 +66,7 @@ export function CharterForm({ dict }: { dict: Dictionary }) {
       </div>
 
       <Input label={dict.charterPage.name} required />
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <Input label={dict.charterPage.email} type="email" required />
         <Input label={dict.charterPage.phone} type="tel" required />
       </div>

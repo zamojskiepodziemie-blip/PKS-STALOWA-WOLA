@@ -15,10 +15,13 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%;
   }
   body {
     @apply bg-white text-ink-900 dark:bg-ink-950 dark:text-ink-50;
     font-feature-settings: "cv11", "ss01", "ss03";
+    -webkit-tap-highlight-color: transparent;
+    overflow-x: hidden;
   }
   ::selection {
     @apply bg-brand-600 text-white;

@@ -92,17 +92,17 @@ function ScheduleSearchInner({ locale, dict }: { locale: Locale; dict: Dictionar
 
 function ConnectionCard({ c, dict }: { c: Connection; dict: Dictionary }) {
   return (
-    <article className="card p-5 md:p-6 hover:border-brand-300 dark:hover:border-brand-800 hover:shadow-lg transition-all group">
-      <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_auto] gap-6 items-center">
+    <article className="card p-4 sm:p-5 md:p-6 hover:border-brand-300 dark:hover:border-brand-800 hover:shadow-lg transition-all group">
+      <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_auto] gap-4 sm:gap-6 items-center">
         {/* Times */}
-        <div className="flex items-center gap-6">
-          <div className="text-center">
-            <div className="font-display text-3xl font-bold tabular-nums">{c.departure}</div>
-            <div className="text-xs text-ink-500 mt-0.5">Stalowa Wola</div>
+        <div className="flex items-center gap-3 sm:gap-6">
+          <div className="text-center min-w-0">
+            <div className="font-display text-2xl sm:text-3xl font-bold tabular-nums">{c.departure}</div>
+            <div className="text-[10px] sm:text-xs text-ink-500 mt-0.5 truncate">Stalowa Wola</div>
           </div>
 
-          <div className="flex-1 relative px-4">
-            <div className="flex items-center justify-center gap-2 text-xs text-ink-500 mb-1.5">
+          <div className="flex-1 relative px-2 sm:px-4">
+            <div className="flex items-center justify-center gap-2 text-[10px] sm:text-xs text-ink-500 mb-1.5">
               <Clock className="w-3 h-3" />
               {c.duration}
             </div>
@@ -118,9 +118,9 @@ function ConnectionCard({ c, dict }: { c: Connection; dict: Dictionary }) {
             </div>
           </div>
 
-          <div className="text-center">
-            <div className="font-display text-3xl font-bold tabular-nums">{c.arrival}</div>
-            <div className="text-xs text-ink-500 mt-0.5">Rzeszów</div>
+          <div className="text-center min-w-0">
+            <div className="font-display text-2xl sm:text-3xl font-bold tabular-nums">{c.arrival}</div>
+            <div className="text-[10px] sm:text-xs text-ink-500 mt-0.5 truncate">Rzeszów</div>
           </div>
         </div>
 
