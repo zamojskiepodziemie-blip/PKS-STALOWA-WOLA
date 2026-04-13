@@ -152,8 +152,8 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
             </motion.div>
           </div>
 
-          {/* RIGHT — bus illustration (hidden on small mobile) */}
-          <div className="relative hidden sm:block">
+          {/* RIGHT — bus illustration */}
+          <div className="relative">
             <div className="absolute inset-0 -z-10 flex items-center justify-center">
               <Logo variant="mark" className="w-[520px] h-[520px] opacity-[0.04] dark:opacity-[0.08]" />
             </div>
