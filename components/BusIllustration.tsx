@@ -41,10 +41,10 @@ export function BusIllustration({ className }: { className?: string }) {
               </radialGradient>
             </defs>
             {[
-              { id: 'wwa', d: 'M 74 70 Q 60 50 58 38', dur: '4s' },
-              { id: 'lub', d: 'M 74 70 Q 80 60 75 53', dur: '2.6s' },
-              { id: 'krk', d: 'M 74 70 Q 64 80 58 78', dur: '3.2s' },
-              { id: 'rze', d: 'M 74 70 Q 78 76 76 78', dur: '1.8s' },
+              { id: 'wwa', d: 'M 74 70 Q 70 55 68.7 44.7', dur: '4s' },
+              { id: 'lub', d: 'M 74 70 Q 80 65 84.3 61.5', dur: '2.6s' },
+              { id: 'krk', d: 'M 74 70 Q 64 77 58 81.9', dur: '3.2s' },
+              { id: 'rze', d: 'M 74 70 Q 77 76 78.5 82.2', dur: '1.8s' },
             ].map((r) => (
               <g key={r.id}>
                 {/* Subtle route path */}
@@ -95,12 +95,12 @@ export function BusIllustration({ className }: { className?: string }) {
             ))}
           </svg>
 
-          {/* Connected city pins */}
+          {/* City pins at true geographic positions (Poland bounding box 14.12°E–24.15°E, 49°N–54.84°N) */}
           {[
-            { name: 'Warszawa', left: '58%', top: '38%', delay: 1.5 },
-            { name: 'Lublin', left: '75%', top: '53%', delay: 1.65 },
-            { name: 'Kraków', left: '58%', top: '78%', delay: 1.8 },
-            { name: 'Rzeszów', left: '76%', top: '78%', delay: 1.95 },
+            { name: 'Warszawa', left: '68.7%', top: '44.7%', delay: 1.5 },
+            { name: 'Lublin', left: '84.3%', top: '61.5%', delay: 1.65 },
+            { name: 'Kraków', left: '58%', top: '81.9%', delay: 1.8 },
+            { name: 'Rzeszów', left: '78.5%', top: '82.2%', delay: 1.95 },
           ].map((city) => (
             <motion.div
               key={city.name}
