@@ -95,6 +95,38 @@ export function BusIllustration({ className }: { className?: string }) {
             ))}
           </svg>
 
+          {/* Voivodeship names — positioned at geographic centers */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            {[
+              { name: 'dolnośląskie', left: '25%', top: '66%', small: false },
+              { name: 'kujawsko-\npomorskie', left: '44%', top: '30%', small: false },
+              { name: 'lubelskie', left: '85%', top: '52%', small: false },
+              { name: 'lubuskie', left: '11%', top: '48%', small: false },
+              { name: 'łódzkie', left: '53%', top: '55%', small: false },
+              { name: 'małopolskie', left: '58%', top: '86%', small: true },
+              { name: 'mazowieckie', left: '68%', top: '48%', small: false },
+              { name: 'opolskie', left: '38%', top: '74%', small: true },
+              { name: 'podkarpackie', left: '81%', top: '86%', small: false },
+              { name: 'podlaskie', left: '87%', top: '27%', small: false },
+              { name: 'pomorskie', left: '38%', top: '13%', small: false },
+              { name: 'śląskie', left: '47%', top: '80%', small: true },
+              { name: 'świętokrzyskie', left: '66%', top: '72%', small: true },
+              { name: 'warmińsko-\nmazurskie', left: '66%', top: '17%', small: false },
+              { name: 'wielkopolskie', left: '30%', top: '42%', small: false },
+              { name: 'zachodnio-\npomorskie', left: '15%', top: '18%', small: false },
+            ].map((woj) => (
+              <div
+                key={woj.name}
+                className="absolute -translate-x-1/2 -translate-y-1/2 select-none text-center"
+                style={{ left: woj.left, top: woj.top }}
+              >
+                <span className={`font-display font-semibold text-black dark:text-white/70 italic tracking-wider leading-tight whitespace-pre-line ${woj.small ? 'text-[5px] md:text-[7px]' : 'text-[6px] md:text-[8px]'}`}>
+                  {woj.name}
+                </span>
+              </div>
+            ))}
+          </div>
+
           {/* City pins at true geographic positions (Poland bounding box 14.12°E–24.15°E, 49°N–54.84°N) */}
           {[
             { name: 'Warszawa', left: '68.7%', top: '44.7%', delay: 1.5 },
