@@ -42,9 +42,9 @@ function ScheduleSearchInner({ locale, dict }: { locale: Locale; dict: Dictionar
     <div className="space-y-8">
       <SearchWidget locale={locale} dict={dict} />
 
-      <div className="flex items-center justify-between flex-wrap gap-4">
+      <div className="flex items-start sm:items-center justify-between flex-wrap gap-4">
         <div>
-          <h2 className="font-display text-2xl font-bold">
+          <h2 className="font-display text-xl sm:text-2xl font-bold break-words">
             {from} → {to}
           </h2>
           <p className="text-sm text-ink-500 mt-1">
@@ -52,8 +52,8 @@ function ScheduleSearchInner({ locale, dict }: { locale: Locale; dict: Dictionar
           </p>
         </div>
 
-        <div className="flex items-center gap-2">
-          <span className="text-xs text-ink-500 mr-1">{dict.schedulePage.sortBy}:</span>
+        <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
+          <span className="text-xs text-ink-500 mr-1 w-full sm:w-auto">{dict.schedulePage.sortBy}:</span>
           {(['earliest', 'fastest', 'cheapest'] as const).map((opt) => (
             <button
               key={opt}
@@ -95,15 +95,15 @@ function ConnectionCard({ c, dict }: { c: Connection; dict: Dictionary }) {
     <article className="card p-4 sm:p-5 md:p-6 hover:border-brand-300 dark:hover:border-brand-800 hover:shadow-lg transition-all group">
       <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_auto] gap-4 sm:gap-6 items-center">
         {/* Times */}
-        <div className="flex items-center gap-3 sm:gap-6">
+        <div className="flex items-center gap-2 sm:gap-6">
           <div className="text-center min-w-0">
-            <div className="font-display text-2xl sm:text-3xl font-bold tabular-nums">{c.departure}</div>
+            <div className="font-display text-xl sm:text-3xl font-bold tabular-nums">{c.departure}</div>
             <div className="text-[10px] sm:text-xs text-ink-500 mt-0.5 truncate">Stalowa Wola</div>
           </div>
 
-          <div className="flex-1 relative px-2 sm:px-4">
-            <div className="flex items-center justify-center gap-2 text-[10px] sm:text-xs text-ink-500 mb-1.5">
-              <Clock className="w-3 h-3" />
+          <div className="flex-1 relative px-1 sm:px-4 min-w-0">
+            <div className="flex items-center justify-center gap-1.5 text-[10px] sm:text-xs text-ink-500 mb-1.5 whitespace-nowrap">
+              <Clock className="w-3 h-3 flex-shrink-0" />
               {c.duration}
             </div>
             <div className="relative h-px bg-gradient-to-r from-brand-600 via-brand-400 to-brand-600">
@@ -113,20 +113,20 @@ function ConnectionCard({ c, dict }: { c: Connection; dict: Dictionary }) {
                 <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-sun-400 ring-2 ring-white dark:ring-ink-900" />
               )}
             </div>
-            <div className="text-center text-[10px] text-ink-500 mt-1.5 uppercase tracking-wider">
+            <div className="text-center text-[10px] text-ink-500 mt-1.5 uppercase tracking-wider truncate">
               {c.transfers === 0 ? dict.schedulePage.direct : `${c.transfers} ${dict.schedulePage.transfers.toLowerCase()}`}
             </div>
           </div>
 
           <div className="text-center min-w-0">
-            <div className="font-display text-2xl sm:text-3xl font-bold tabular-nums">{c.arrival}</div>
+            <div className="font-display text-xl sm:text-3xl font-bold tabular-nums">{c.arrival}</div>
             <div className="text-[10px] sm:text-xs text-ink-500 mt-0.5 truncate">Rzeszów</div>
           </div>
         </div>
 
         {/* Meta */}
-        <div className="flex items-center gap-3 md:border-x md:px-6 md:border-ink-200 md:dark:border-ink-800">
-          <div className="flex items-center gap-1.5">
+        <div className="flex items-center justify-between md:justify-start gap-3 md:border-x md:px-6 md:border-ink-200 md:dark:border-ink-800 pt-3 md:pt-0 border-t md:border-t-0 border-ink-200 dark:border-ink-800">
+          <div className="flex items-center gap-1.5 flex-wrap">
             {c.amenities.map((a) => {
               const Icon = amenityIcon[a];
               return Icon ? (
@@ -136,7 +136,7 @@ function ConnectionCard({ c, dict }: { c: Connection; dict: Dictionary }) {
               ) : null;
             })}
           </div>
-          <div className="flex items-center gap-1 text-xs text-ink-500">
+          <div className="flex items-center gap-1 text-xs text-ink-500 whitespace-nowrap">
             <Users className="w-3 h-3" />
             {c.seatsLeft}
           </div>

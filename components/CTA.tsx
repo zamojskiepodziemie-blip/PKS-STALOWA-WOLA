@@ -27,10 +27,10 @@ export function CTA({ locale, dict }: { locale: Locale; dict: Dictionary }) {
             <h2 className="h-display text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-white">
               {dict.cta.title}
             </h2>
-            <p className="mt-4 sm:mt-5 text-base sm:text-lg md:text-xl text-white/80 max-w-xl text-pretty">
+            <p className="mt-4 sm:mt-5 text-sm sm:text-lg md:text-xl text-white/80 max-w-xl text-pretty">
               {dict.cta.subtitle}
             </p>
-            <div className="mt-10 flex flex-wrap gap-3">
+            <div className="mt-6 sm:mt-10 flex flex-col sm:flex-row sm:flex-wrap gap-3">
               <Link href={`/${locale}/schedule`} className="btn bg-white text-ink-900 hover:bg-ink-100 group">
                 {dict.cta.primary}
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />

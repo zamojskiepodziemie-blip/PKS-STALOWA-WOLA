@@ -15,11 +15,11 @@ export function FuelPrices({ dict }: { dict: Dictionary }) {
   return (
     <section className="section bg-ink-50 dark:bg-ink-950/50 relative">
       <div className="container">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8 sm:mb-12">
           <div>
             <span className="eyebrow mb-4">{dict.fuel.eyebrow}</span>
             <h2 className="h-display text-3xl sm:text-4xl md:text-5xl mt-4">{dict.fuel.title}</h2>
-            <p className="mt-3 text-lg text-ink-600 dark:text-ink-400">{dict.fuel.subtitle}</p>
+            <p className="mt-3 text-base sm:text-lg text-ink-600 dark:text-ink-400">{dict.fuel.subtitle}</p>
           </div>
           <div className="flex items-center gap-2 text-sm text-ink-500">
             <span className="relative flex w-2 h-2">
@@ -38,14 +38,14 @@ export function FuelPrices({ dict }: { dict: Dictionary }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="card p-7"
+              className="card p-5 sm:p-7"
             >
-              <header className="flex flex-col sm:flex-row items-start justify-between gap-3 sm:gap-4 mb-6 pb-6 border-b border-ink-200 dark:border-ink-800">
-                <div>
-                  <h3 className="font-display text-xl font-semibold">{station.name}</h3>
-                  <p className="mt-1 flex items-center gap-1.5 text-sm text-ink-500">
-                    <MapPin className="w-3.5 h-3.5" />
-                    {station.address}, {station.city}
+              <header className="flex flex-col sm:flex-row items-start justify-between gap-3 sm:gap-4 mb-5 sm:mb-6 pb-5 sm:pb-6 border-b border-ink-200 dark:border-ink-800">
+                <div className="min-w-0">
+                  <h3 className="font-display text-lg sm:text-xl font-semibold">{station.name}</h3>
+                  <p className="mt-1 flex items-start gap-1.5 text-sm text-ink-500">
+                    <MapPin className="w-3.5 h-3.5 mt-0.5 flex-shrink-0" />
+                    <span className="break-words">{station.address}, {station.city}</span>
                   </p>
                 </div>
                 {station.open247 && (
@@ -56,16 +56,16 @@ export function FuelPrices({ dict }: { dict: Dictionary }) {
                 )}
               </header>
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3">
                 {station.prices.map((p) => {
                   const { Icon, color } = trendIcons[p.trend];
                   return (
-                    <div key={p.type} className="relative p-4 rounded-2xl bg-ink-50 dark:bg-ink-950/70 border border-ink-200/60 dark:border-ink-800">
+                    <div key={p.type} className="relative p-3 sm:p-4 rounded-2xl bg-ink-50 dark:bg-ink-950/70 border border-ink-200/60 dark:border-ink-800">
                       <div className="flex items-center justify-between">
                         <span className="text-[11px] uppercase tracking-wider font-semibold text-ink-500">{p.type}</span>
-                        <Icon className={`w-3.5 h-3.5 ${color}`} />
+                        <Icon className={`w-3.5 h-3.5 ${color} flex-shrink-0`} />
                       </div>
-                      <div className="mt-1 font-display text-2xl font-bold tabular-nums">
+                      <div className="mt-1 font-display text-xl sm:text-2xl font-bold tabular-nums">
                         {p.price.toFixed(2)}
                         <span className="text-xs font-medium text-ink-500 ml-1">zł/l</span>
                       </div>
@@ -74,7 +74,7 @@ export function FuelPrices({ dict }: { dict: Dictionary }) {
                 })}
               </div>
 
-              <button className="mt-6 btn-ghost w-full">
+              <button className="mt-5 sm:mt-6 btn-ghost w-full">
                 <MapPin className="w-4 h-4" />
                 {dict.fuel.directions}
               </button>

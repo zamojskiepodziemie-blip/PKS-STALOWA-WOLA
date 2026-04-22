@@ -69,8 +69,8 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
         </div>
       </div>
 
-      <div className={cn('container flex items-center justify-between gap-6 transition-all', scrolled ? 'py-2.5' : 'py-4')}>
-        <Link href={`/${locale}`} className="group" aria-label="PKS Stalowa Wola — strona główna">
+      <div className={cn('container flex items-center justify-between gap-3 sm:gap-6 transition-all', scrolled ? 'py-2.5' : 'py-4')}>
+        <Link href={`/${locale}`} className="group min-w-0" aria-label="PKS Stalowa Wola — strona główna">
           <Logo className="group-hover:opacity-90 transition-opacity" />
         </Link>
 
@@ -114,8 +114,8 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
       {/* Mobile menu */}
       <div
         className={cn(
-          'lg:hidden overflow-hidden transition-all duration-300',
-          open ? 'max-h-[500px] mt-4' : 'max-h-0'
+          'lg:hidden overflow-y-auto transition-all duration-300',
+          open ? 'max-h-[calc(100vh-7rem)] mt-4 pb-4' : 'max-h-0'
         )}
       >
         <div className="container">

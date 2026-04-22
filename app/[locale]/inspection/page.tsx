@@ -8,35 +8,35 @@ export default async function InspectionPage({ params }: { params: Promise<{ loc
   const slots = ['08:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00', '11:30', '13:00', '13:30', '14:00'];
 
   return (
-    <div className="pt-32 pb-20">
+    <div className="pt-28 sm:pt-32 pb-16 sm:pb-20">
       <div className="container">
-        <div className="max-w-3xl mb-12">
+        <div className="max-w-3xl mb-10 sm:mb-12">
           <span className="eyebrow mb-4">{dict.nav.inspection}</span>
           <h1 className="h-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-4">{dict.inspectionPage.title}</h1>
           <p className="mt-4 text-lg text-ink-600 dark:text-ink-400">{dict.inspectionPage.subtitle}</p>
         </div>
 
-        <div className="grid lg:grid-cols-[1fr_1.5fr] gap-8">
-          <div className="card p-8">
-            <h3 className="font-display text-xl font-semibold mb-4">Stacja Kontroli Pojazdów</h3>
+        <div className="grid lg:grid-cols-[1fr_1.5fr] gap-6 sm:gap-8">
+          <div className="card p-5 sm:p-8">
+            <h3 className="font-display text-lg sm:text-xl font-semibold mb-4">Stacja Kontroli Pojazdów</h3>
             <ul className="space-y-3 text-sm">
               {['Samochody osobowe', 'Motocykle', 'Pojazdy ciężarowe', 'Autobusy', 'Pojazdy z instalacją gazową'].map((t) => (
                 <li key={t} className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-600" />
+                  <Check className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                   {t}
                 </li>
               ))}
             </ul>
             <div className="mt-6 pt-6 border-t border-ink-200 dark:border-ink-800 text-sm space-y-2">
-              <div className="flex items-center gap-2"><Clock className="w-4 h-4 text-brand-600" /> Pn–Pt: 7:00 – 19:00</div>
-              <div className="flex items-center gap-2"><Clock className="w-4 h-4 text-brand-600" /> Sob: 8:00 – 14:00</div>
+              <div className="flex items-center gap-2"><Clock className="w-4 h-4 text-brand-600 flex-shrink-0" /> Pn–Pt: 7:00 – 19:00</div>
+              <div className="flex items-center gap-2"><Clock className="w-4 h-4 text-brand-600 flex-shrink-0" /> Sob: 8:00 – 14:00</div>
             </div>
           </div>
 
-          <div className="card p-8">
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="font-display text-xl font-semibold">{dict.inspectionPage.bookSlot}</h3>
-              <div className="flex items-center gap-2 text-sm text-ink-500">
+          <div className="card p-5 sm:p-8">
+            <div className="flex items-center justify-between flex-wrap gap-2 mb-6">
+              <h3 className="font-display text-lg sm:text-xl font-semibold">{dict.inspectionPage.bookSlot}</h3>
+              <div className="flex items-center gap-2 text-xs sm:text-sm text-ink-500">
                 <Calendar className="w-4 h-4" /> 12 kwietnia 2026
               </div>
             </div>
@@ -45,7 +45,7 @@ export default async function InspectionPage({ params }: { params: Promise<{ loc
                 <button
                   key={s}
                   disabled={i === 2 || i === 6}
-                  className="px-3 py-3 rounded-2xl border border-ink-200 dark:border-ink-800 text-sm font-semibold hover:border-brand-600 hover:bg-brand-50 dark:hover:bg-brand-950/30 hover:text-brand-700 dark:hover:text-brand-400 disabled:opacity-30 disabled:cursor-not-allowed disabled:line-through transition-all"
+                  className="px-2 sm:px-3 py-3 min-h-[44px] rounded-2xl border border-ink-200 dark:border-ink-800 text-sm font-semibold hover:border-brand-600 hover:bg-brand-50 dark:hover:bg-brand-950/30 hover:text-brand-700 dark:hover:text-brand-400 disabled:opacity-30 disabled:cursor-not-allowed disabled:line-through transition-all"
                 >
                   {s}
                 </button>

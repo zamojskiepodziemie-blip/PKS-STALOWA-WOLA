@@ -31,7 +31,7 @@ export function SearchWidget({ locale, dict }: { locale: Locale; dict: Dictionar
       onSubmit={submit}
       className="card !rounded-3xl p-2 shadow-2xl shadow-ink-900/10 dark:shadow-black/40 ring-1 ring-ink-200/50 dark:ring-ink-800/50"
     >
-      <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr_1fr_auto_auto] gap-2 items-stretch">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[1fr_auto_1fr_1fr_auto_auto] gap-2 items-stretch">
         <Field icon={<MapPin className="w-4 h-4 text-brand-600" />} label={dict.search.from}>
           <CityInput value={from} onChange={setFrom} />
         </Field>
@@ -71,21 +71,21 @@ export function SearchWidget({ locale, dict }: { locale: Locale; dict: Dictionar
           </select>
         </Field>
 
-        <button type="submit" className="btn-primary md:!rounded-2xl !rounded-2xl h-full px-6">
+        <button type="submit" className="btn-primary md:!rounded-2xl !rounded-2xl h-full min-h-[52px] px-6 sm:col-span-2 md:col-span-1">
           <Search className="w-4 h-4" />
           <span className="md:hidden lg:inline">{dict.search.search}</span>
         </button>
       </div>
 
       {/* Popular */}
-      <div className="px-3 pt-3 pb-1 flex items-center gap-2 flex-wrap text-xs">
-        <span className="text-ink-500 font-medium">{dict.search.popular}:</span>
+      <div className="px-3 pt-3 pb-1 flex items-center gap-1.5 sm:gap-2 flex-wrap text-[11px] sm:text-xs">
+        <span className="text-ink-500 font-medium w-full sm:w-auto">{dict.search.popular}:</span>
         {popularRoutes.map((r) => (
           <button
             key={`${r.from}-${r.to}`}
             type="button"
             onClick={() => { setFrom(r.from); setTo(r.to); }}
-            className="px-2.5 py-1 rounded-full bg-ink-100 dark:bg-ink-800 hover:bg-brand-600 hover:text-white transition-colors"
+            className="px-2.5 py-1 rounded-full bg-ink-100 dark:bg-ink-800 hover:bg-brand-600 hover:text-white transition-colors whitespace-nowrap"
           >
             {r.from} → {r.to}
           </button>

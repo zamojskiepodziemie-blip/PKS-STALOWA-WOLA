@@ -82,11 +82,11 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
                     </span>
                   </div>
                   {/* Bottom caption */}
-                  <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
-                    <div className="font-display text-lg font-bold leading-tight drop-shadow-lg">
+                  <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-5 text-white">
+                    <div className="font-display text-sm sm:text-lg font-bold leading-tight drop-shadow-lg">
                       Nowoczesne autokary PKS
                     </div>
-                    <div className="text-xs text-white/85 mt-0.5 drop-shadow">
+                    <div className="text-[10px] sm:text-xs text-white/85 mt-0.5 drop-shadow">
                       Komfort i bezpieczeństwo na każdej trasie
                     </div>
                   </div>
@@ -99,9 +99,9 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5, type: 'spring', stiffness: 140 }}
                 whileHover={{ scale: 1.08 }}
-                className="absolute top-[-13%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none"
+                className="absolute top-[-8%] sm:top-[-13%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none"
               >
-                <div className="relative w-36 h-36 sm:w-52 sm:h-52 md:w-60 md:h-60 lg:w-72 lg:h-72">
+                <div className="relative w-28 h-28 sm:w-52 sm:h-52 md:w-60 md:h-60 lg:w-72 lg:h-72">
                   <Image
                     src="/pksstwola-logo.png"
                     alt="Logo PKS Stalowa Wola S.A."

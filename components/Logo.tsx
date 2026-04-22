@@ -38,8 +38,8 @@ export function Logo({ className, variant = 'full', invert = false }: Props) {
   }
 
   return (
-    <div className={cn('flex items-center gap-3', className)}>
-      <svg viewBox="0 0 64 64" className="w-11 h-11 md:w-12 md:h-12 flex-shrink-0" aria-hidden="true">
+    <div className={cn('flex items-center gap-2 sm:gap-3', className)}>
+      <svg viewBox="0 0 64 64" className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 flex-shrink-0" aria-hidden="true">
         <defs>
           <linearGradient id="pks-grad-h" x1="0" y1="0" x2="1" y2="1">
             <stop offset="0" stopColor="#22c55e" />
@@ -69,14 +69,14 @@ export function Logo({ className, variant = 'full', invert = false }: Props) {
       </svg>
       <div className="leading-none">
         <div
-          className="font-display font-extrabold tracking-tight text-lg sm:text-xl md:text-2xl"
+          className="font-display font-extrabold tracking-tight text-base sm:text-xl md:text-2xl"
           style={{ color: text }}
         >
           PKS Stalowa Wola
         </div>
         <div
           className={cn(
-            'mt-1 text-[10px] md:text-[11px] uppercase tracking-[0.18em] font-semibold',
+            'mt-1 text-[9px] sm:text-[10px] md:text-[11px] uppercase tracking-[0.16em] sm:tracking-[0.18em] font-semibold',
             invert ? 'text-white/70' : 'text-brand-600'
           )}
         >

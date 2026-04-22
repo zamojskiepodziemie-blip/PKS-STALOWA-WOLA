@@ -19,14 +19,14 @@ export function News({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   return (
     <section className="section">
       <div className="container">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8 sm:mb-12">
           <div>
             <span className="eyebrow mb-4">{dict.news.eyebrow}</span>
             <h2 className="h-display text-3xl sm:text-4xl md:text-5xl mt-4">{dict.news.title}</h2>
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
           {items.map((n, i) => (
             <motion.article
               key={n.id}
@@ -51,9 +51,9 @@ export function News({ locale, dict }: { locale: Locale; dict: Dictionary }) {
                   </span>
                 </div>
               </div>
-              <div className="p-6">
+              <div className="p-5 sm:p-6">
                 <time className="text-xs text-ink-500">{n.date}</time>
-                <h3 className="mt-2 font-display text-lg font-semibold leading-snug group-hover:text-brand-600 transition-colors">
+                <h3 className="mt-2 font-display text-base sm:text-lg font-semibold leading-snug group-hover:text-brand-600 transition-colors">
                   {n.title}
                 </h3>
                 <p className="mt-2 text-sm text-ink-600 dark:text-ink-400 line-clamp-2">{n.excerpt}</p>

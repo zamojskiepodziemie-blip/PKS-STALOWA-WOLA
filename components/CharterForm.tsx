@@ -22,7 +22,7 @@ export function CharterForm({ dict }: { dict: Dictionary }) {
 
   if (state === 'sent') {
     return (
-      <div className="card p-10 text-center">
+      <div className="card p-6 sm:p-10 text-center">
         <div className="w-16 h-16 mx-auto rounded-full bg-emerald-50 dark:bg-emerald-950/50 grid place-items-center text-emerald-600 mb-4">
           <CheckCircle2 className="w-8 h-8" />
         </div>
@@ -33,7 +33,7 @@ export function CharterForm({ dict }: { dict: Dictionary }) {
   }
 
   return (
-    <form onSubmit={submit} className="card p-6 md:p-8 space-y-5">
+    <form onSubmit={submit} className="card p-4 sm:p-6 md:p-8 space-y-5">
       <div>
         <label className="text-xs uppercase tracking-wider font-semibold text-ink-500 mb-3 block">
           {dict.charterPage.vehicleType}
@@ -44,14 +44,14 @@ export function CharterForm({ dict }: { dict: Dictionary }) {
               key={v.id}
               type="button"
               onClick={() => setVehicle(v.id)}
-              className={`p-4 rounded-2xl border-2 text-center transition-all ${
+              className={`p-3 sm:p-4 rounded-2xl border-2 text-center transition-all ${
                 vehicle === v.id
                   ? 'border-brand-600 bg-brand-50 dark:bg-brand-950/30'
                   : 'border-ink-200 dark:border-ink-800 hover:border-ink-300'
               }`}
             >
-              <div className="text-3xl mb-1">{v.img}</div>
-              <div className="text-xs font-semibold">{v.name}</div>
+              <div className="text-2xl sm:text-3xl mb-1 leading-none">{v.img}</div>
+              <div className="text-[11px] sm:text-xs font-semibold leading-tight">{v.name}</div>
               <div className="text-[10px] text-ink-500">{v.seats}</div>
             </button>
           ))}

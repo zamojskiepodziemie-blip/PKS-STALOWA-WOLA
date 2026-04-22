@@ -14,24 +14,24 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
   ];
 
   return (
-    <div className="pt-32 pb-20">
+    <div className="pt-28 sm:pt-32 pb-16 sm:pb-20">
       <div className="container">
-        <div className="max-w-3xl mb-16">
+        <div className="max-w-3xl mb-10 sm:mb-16">
           <span className="eyebrow mb-4">{dict.nav.contact}</span>
           <h1 className="h-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-4">{dict.contactPage.title}</h1>
-          <p className="mt-4 text-lg text-ink-600 dark:text-ink-400">{dict.contactPage.subtitle}</p>
+          <p className="mt-4 text-base sm:text-lg text-ink-600 dark:text-ink-400">{dict.contactPage.subtitle}</p>
         </div>
 
-        <div className="grid lg:grid-cols-[1fr_1.2fr] gap-10">
+        <div className="grid lg:grid-cols-[1fr_1.2fr] gap-6 sm:gap-10">
           <div className="space-y-4">
             {items.map(({ Icon, label, value }) => (
-              <div key={label} className="card p-6 flex gap-4">
+              <div key={label} className="card p-4 sm:p-6 flex gap-4">
                 <div className="w-12 h-12 rounded-2xl bg-brand-50 dark:bg-brand-950/50 grid place-items-center text-brand-600 flex-shrink-0">
                   <Icon className="w-5 h-5" />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <div className="text-xs uppercase tracking-wider font-semibold text-ink-500">{label}</div>
-                  <div className="mt-1 font-medium whitespace-pre-line">{value}</div>
+                  <div className="mt-1 font-medium whitespace-pre-line break-words">{value}</div>
                 </div>
               </div>
             ))}

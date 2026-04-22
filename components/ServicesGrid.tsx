@@ -22,13 +22,13 @@ export function ServicesGrid({ locale, dict }: { locale: Locale; dict: Dictionar
   return (
     <section className="section relative">
       <div className="container">
-        <div className="max-w-2xl mb-14">
+        <div className="max-w-2xl mb-10 sm:mb-14">
           <span className="eyebrow mb-4">{dict.services.eyebrow}</span>
           <h2 className="h-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-4">{dict.services.title}</h2>
-          <p className="mt-4 text-lg text-ink-600 dark:text-ink-400 text-pretty">{dict.services.subtitle}</p>
+          <p className="mt-4 text-base sm:text-lg text-ink-600 dark:text-ink-400 text-pretty">{dict.services.subtitle}</p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {dict.services.items.map((item, i) => {
             const Icon = icons[i] ?? Bus;
             const img = images[i] ?? images[0];
@@ -71,8 +71,8 @@ export function ServicesGrid({ locale, dict }: { locale: Locale; dict: Dictionar
                   </div>
 
                   {/* Content */}
-                  <div className="p-6">
-                    <h3 className="text-xl font-display font-semibold leading-tight">
+                  <div className="p-5 sm:p-6">
+                    <h3 className="text-lg sm:text-xl font-display font-semibold leading-tight">
                       {item.title}
                     </h3>
                     <p className="mt-2 text-sm text-ink-600 dark:text-ink-400 leading-relaxed">
