@@ -13,7 +13,7 @@ import { Logo } from './Logo';
 
 export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   return (
-    <section className="relative pt-28 sm:pt-32 md:pt-36 overflow-hidden">
+    <section className="relative pt-36 sm:pt-32 md:pt-36 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-grid-light dark:bg-grid-dark bg-[size:64px_64px] mask-fade-b opacity-40 -z-10" />
       <div className="absolute inset-0 bg-radial-fade -z-10" />
@@ -32,13 +32,13 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="relative z-20 flex flex-wrap items-center gap-3 mb-6"
+              className="relative z-20 flex flex-wrap items-start sm:items-center gap-2 sm:gap-3 mb-6"
             >
-              <span className="eyebrow">
+              <span className="eyebrow w-fit">
                 <ShieldCheck className="w-3 h-3" />
                 {dict.hero.eyebrow}
               </span>
-              <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-sun-50 dark:bg-sun-950/40 text-sun-700 dark:text-sun-400 border border-sun-200 dark:border-sun-900">
+              <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-sun-50 dark:bg-sun-950/40 text-sun-700 dark:text-sun-400 border border-sun-200 dark:border-sun-900 w-fit">
                 <Star className="w-3 h-3 fill-current" />
                 4.8/5 · 2400+ opinii
               </span>
