@@ -32,7 +32,7 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="flex flex-wrap items-center gap-3 mb-6"
+              className="relative z-20 flex flex-wrap items-center gap-3 mb-6"
             >
               <span className="eyebrow">
                 <ShieldCheck className="w-3 h-3" />
@@ -99,9 +99,9 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5, type: 'spring', stiffness: 140 }}
                 whileHover={{ scale: 1.08 }}
-                className="absolute top-[-8%] sm:top-[-13%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none"
+                className="absolute top-[-2%] sm:top-[-13%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none"
               >
-                <div className="relative w-28 h-28 sm:w-52 sm:h-52 md:w-60 md:h-60 lg:w-72 lg:h-72">
+                <div className="relative w-24 h-24 sm:w-52 sm:h-52 md:w-60 md:h-60 lg:w-72 lg:h-72">
                   <Image
                     src="/pksstwola-logo.png"
                     alt="Logo PKS Stalowa Wola S.A."
